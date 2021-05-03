@@ -6,7 +6,7 @@ using namespace std;
 using namespace parser;
 
 void sharkName() {
-	cout << "DStat\n<c> Sharkbyteprojects" << endl;
+	cout << "DStat\n<c> Sharkbyteprojects\nhttps://github.com/FreeSoftwareDevlopment/sharkFileStats/" << endl;
 }
 
 #define cxJson (shark::uminiint)0b001

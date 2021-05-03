@@ -10,7 +10,13 @@
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x86" ],
-      "variables": []
+      "variables": [
+        {
+          "name": "CPACK_BINARY_NSIS",
+          "value": "False",
+          "type": "BOOL"
+        }
+      ]
     },
     {
       "name": "Linux-Clang-Release",
