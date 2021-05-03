@@ -5,10 +5,10 @@
 - <strong>Windows:</strong> you need Visual Studio and CMake
 - <strong>Linux:</strong> you need make, cmake and a c++ compiler installed
 
-- Use `cmake -S <path to the folder where this readme is> -D <where you want that cmake create the files, must be a empty folder>` to create os specific build files.
+- Use `cmake --build <path to store the build> --config Release` to create os specific build files.
 
-- <strong>Windows:</strong> Enter with Devloper Command Prompt the folder where cmake created the files, and type `msbuild <path to the .sln file in the folder>`
-- <strong>Linux:</strong> Enter the folder where cmake created the files and type `make`
+<!--- <strong>Windows:</strong> Enter with Devloper Command Prompt the folder where cmake created the files, and type `msbuild <path to the .sln file in the folder>`
+- <strong>Linux:</strong> Enter the folder where cmake created the files and type `make`-->
 
 ## Command Line Arguments: 
 
