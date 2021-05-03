@@ -2,5 +2,5 @@
 
 ADD_LIBRARY(drive "getDiskStats/diskstats.h" "getDiskStats/diskstats.cxx" "osspec.h" "global.h")
 add_library(sharks::drive ALIAS drive)
-add_executable (firstuniversalWINuLINUXcpp "firstuniversalWINuLINUXcpp.cpp" "firstuniversalWINuLINUXcpp.h" "getDiskStats/diskstats.h" "osspec.h" "getDiskStats/diskstats.cxx" "global.h")
-target_link_libraries(firstuniversalWINuLINUXcpp sharks::drive sharks::parser sharks::stringtochar)
+add_executable (sharkFsStats "firstuniversalWINuLINUXcpp.cpp" "firstuniversalWINuLINUXcpp.h" "getDiskStats/diskstats.h" "osspec.h" "getDiskStats/diskstats.cxx" "global.h")
+target_link_libraries(sharkFsStats sharks::drive sharks::parser sharks::stringtochar)
