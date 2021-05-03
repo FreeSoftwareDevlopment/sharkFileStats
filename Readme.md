@@ -7,7 +7,6 @@
 
 - Use `cmake --build <path to store the build> --config Release` to build the app (the main app is `sharkFsStats` (`sharkFsStats.exe` on windows)).
 
-
 ## Command Line Arguments: 
 
 Argument	|  Description
