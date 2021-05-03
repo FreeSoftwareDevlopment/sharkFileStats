@@ -26,7 +26,7 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
     - name: Prepare Artefact
       working-directory: ${{github.workspace}}/build
-      run: ls&&mkdir ../publish&&cp sharkFsStats ../publish/sharkFsStats.elf&&cp ../LICENSE ../publish/LICENSE
+      run: ls&&mkdir ../publish&&cp ./firstuniversalWINuLINUXcpp/sharkFsStats ../publish/sharkFsStats.elf&&cp ../LICENSE ../publish/LICENSE
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
