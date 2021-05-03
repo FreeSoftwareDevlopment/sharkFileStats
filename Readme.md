@@ -10,7 +10,7 @@ Use `cmake -S <path to the folder where this readme is> -D <where you want that 
 - <strong>Windows:</strong> Enter with Devloper Command Prompt the folder where cmake created the files, and type `msbuild <path to the .sln file in the folder>`
 - <strong>Linux:</strong> Enter the folder where cmake created the files and type `make`
 
-### Command line Arguments: 
+## Command Line Arguments: 
 
 Argument	|  Description
 ----------  |  ---------------------------------------------------------------------------
@@ -25,6 +25,12 @@ Allowed is only 1 arg of each argument, if you have a duplicated arg, the others
 ---
 
 Do not be irritated by the name of the main folder, originally I did not know what I want to code
+
+---
+
+## Donate
+
+Our Ethereum Donation Address: `0xC09EE37963E11100ce6354F5ABd2aa76dB3eB109`
 
 ---
 
