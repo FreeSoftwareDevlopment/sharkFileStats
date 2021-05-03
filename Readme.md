@@ -1,5 +1,7 @@
 # fileStat Shark
 
+[Releases](https://github.com/FreeSoftwareDevlopment/sharkFileStats/releases) (The Linux Version is automated build over GitHub Actions)
+
 ## Compile:
 
 - <strong>Windows:</strong> you need Visual Studio and CMake
