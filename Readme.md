@@ -19,6 +19,11 @@ Argument	|  Description
 
 Allowed is only 1 arg of each argument, if you have a duplicated arg, the others will ignored (`-cpath`)
 
+## Example Usages
+
+To get only "Free Disk Space":
+
+![./sharkFsStats -json|jq .currentFreeSpace](https://user-images.githubusercontent.com/40953479/116978936-aa8f0800-acc4-11eb-8fa1-99d8ec83e001.png)
 
 
 ---
