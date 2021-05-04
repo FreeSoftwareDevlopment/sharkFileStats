@@ -15,7 +15,7 @@
 #endif
 
 namespace shark {
-	typedef unsigned char BOOL;
+	typedef unsigned int BOOL;
 	typedef long long int64;
 	typedef unsigned char uminiint;
 }

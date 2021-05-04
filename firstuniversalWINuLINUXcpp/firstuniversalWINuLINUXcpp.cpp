@@ -14,20 +14,33 @@ void sharkName() {
 #define cxExtendet (shark::uminiint)0b100
 #define cxNone (shark::uminiint)0b000
 
+template<typename booltype = shark::BOOL>
+char* booltostring(booltype x) {
+	char* bExists = "false";
+	if (x) {
+		bExists = "true";
+	}
+	return bExists;
+}
+
 void content(shark::uminiint cx, char* path = ".") {
 	shark::BOOL cExtendet = cx & cxExtendet, cJson = cx & cxJson;
 	shark::int64 freediskspace = disks::freeDiskSpace(path);
+	shark::BOOL isFolder = disks::isPathFolder(path) & dfile, exists = disks::fileExists(path);
 	if (cJson) {
 		cout << "{" << "\"currentFreeSpace\": " << freediskspace;
 		if (cExtendet) {
-			cout << ", \"targetOS\": \"" << ostype << "\"";
+			cout << ", \"targetOS\": \"" << ostype << "\", \"pathexists\": " << booltostring(exists) << 
+				", \"isPathFile\": " << booltostring(isFolder);
 		}
 	}
 	else {
 		sharkName();
 		cout << "Current Free Space: " << freediskspace << " bytes\n";
 		if (cExtendet) {
-			cout << "Compiled for OS: " << ostype << "\n" << "Selected Path: " << path << "\n";
+			cout << "Compiled for OS: " << ostype << "\n" << "Selected Path: " << path << "\n" <<
+				"Selected Path Exists: " << booltostring(exists) << "\n" <<
+				"Is Path File: " << booltostring(isFolder) << "\n";
 		}
 		cout << flush;
 	}
