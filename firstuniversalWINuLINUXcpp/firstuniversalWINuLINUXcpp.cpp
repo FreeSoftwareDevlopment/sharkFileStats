@@ -38,7 +38,7 @@ void content(shark::uminiint cx, char* path = ".") {
 		}
 		if (cExtendet) {
 			cout << ", \"targetOS\": \"" << ostype << "\", \"pathexists\": " << booltostring(exists) << 
-				", \"isPathFile\": " << booltostring(isFolder);
+				", \"isPathFile\": " << booltostring(isFolder) << ", \"ramFailed\": " << booltostring(!RamOK);
 		}
 	}
 	else {
