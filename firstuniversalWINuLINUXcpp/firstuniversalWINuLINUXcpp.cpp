@@ -33,23 +33,30 @@ void content(shark::uminiint cx, char* path = ".") {
 	tie(freeRam, ram, RamOK) = mem::getMemPhys();
 	if (cJson) {
 		cout << "{" << "\"currentFreeSpace\": " << freediskspace;
-		if(RamOK!=0){
+		if (RamOK != 0) {
 			cout << ", \"freePhysMem\": " << freeRam << ", \"totalPhysRam\": " << ram;
 		}
 		if (cExtendet) {
-			cout << ", \"targetOS\": \"" << ostype << "\", \"pathexists\": " << booltostring(exists) << 
-				", \"isPathFile\": " << booltostring(isFolder) << ", \"ramFailed\": " << booltostring(!RamOK);
+			auto sycn{ chrono::system_clock::now().time_since_epoch().count() * chrono::milliseconds::period::num / chrono::milliseconds::period::den },
+				stcn{ chrono::steady_clock::now().time_since_epoch().count() * chrono::milliseconds::period::num / chrono::milliseconds::period::den };
+			cout << ", \"targetOS\": \"" << ostype << "\", \"pathexists\": " << booltostring(exists) <<
+				", \"isPathFile\": " << booltostring(isFolder) << ", \"ramFailed\": " << booltostring(!RamOK) <<
+				", \"systemclock\": " << sycn << ", \"steadyclock\": " << stcn;
 		}
 	}
 	else {
 		sharkName();
 		cout << "Current Free Space: " << freediskspace << " bytes\n";
 		if (cExtendet) {
+			auto sycn{ chrono::system_clock::now().time_since_epoch().count() * chrono::milliseconds::period::num / chrono::milliseconds::period::den },
+				stcn{ chrono::steady_clock::now().time_since_epoch().count() * chrono::milliseconds::period::num / chrono::milliseconds::period::den };
 			cout << "Compiled for OS: " << ostype << "\n" << "Selected Path: " << path << "\n" <<
 				"Selected Path Exists: " << booltostring(exists) << "\n" <<
-				"Is Path File: " << booltostring(isFolder) << "\n";
+				"Is Path File: " << booltostring(isFolder) << "\n" <<
+				"System Clock: " << sycn << " seconds\n" <<
+				"Steady Clock: " << stcn << " seconds\n";
 		}
-		if (RamOK!=0) {
+		if (RamOK != 0) {
 			cout << "Free Physical Memory: " << freeRam <<
 				"\nTotal Physical Memory: " << ram << "\n";
 		}

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "global.h"
 #include <tuple>
+#include <chrono>
 #include "getDiskStats/diskstats.h"
 
 #ifdef linux

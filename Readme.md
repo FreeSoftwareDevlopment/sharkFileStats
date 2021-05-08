@@ -25,7 +25,17 @@ To get only "Free Disk Space":
 
 ![./sharkFsStats -json|jq .currentFreeSpace](https://user-images.githubusercontent.com/40953479/116979217-0194dd00-acc5-11eb-94a5-e3b26c6fc413.png)
 
+## C++ Source Files and Description
 
+- [`firstuniversalWINuLINUXcpp.cpp`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/firstuniversalWINuLINUXcpp/firstuniversalWINuLINUXcpp.cpp) (Entry Point)
+- [`global.h`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/firstuniversalWINuLINUXcpp/global.h) (Global definitions for drive and main)
+- [`osspec.h`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/firstuniversalWINuLINUXcpp/osspec.h) (Define the used OS to use the correct headers and libs)
+- [`diskstats.cxx`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/firstuniversalWINuLINUXcpp/getDiskStats/diskstats.cxx) (Main file for functions for Disk and Memory Stats)
+- [`diskstats.h`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/firstuniversalWINuLINUXcpp/getDiskStats/diskstats.h) (Header for `diskstats.cxx`)
+- [`parser.cxx`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/commandlineparser/parser.cxx) (Function definitions for the command line parser)
+- [`parser.h`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/commandlineparser/parser.h) (Header file for the command line parser)
+- [`stchar.cxx`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/stringtochar/stchar.cxx) (`std::string` to `char*` converter function def)
+- [`stchar.h`](https://github.com/FreeSoftwareDevlopment/sharkFileStats/blob/master/stringtochar/stchar.h) (Header for `std::string` to `char*` converter)
 
 ---
 
