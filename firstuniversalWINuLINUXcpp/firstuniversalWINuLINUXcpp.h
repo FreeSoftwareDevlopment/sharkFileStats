@@ -1,6 +1,7 @@
 ﻿#pragma once 
 #include <iostream>
 #include "global.h"
+#include <tuple>
 #include "getDiskStats/diskstats.h"
 
 #ifdef linux

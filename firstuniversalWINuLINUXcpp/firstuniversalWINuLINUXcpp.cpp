@@ -16,9 +16,10 @@ void sharkName() {
 
 template<typename booltype = shark::BOOL>
 char* booltostring(booltype x) {
-	char* bExists = "false";
+	char* bExists = stchar::stringtochar(std::string("false"));
 	if (x) {
-		bExists = "true";
+		free(bExists);
+		bExists = stchar::stringtochar(std::string("true"));
 	}
 	return bExists;
 }
@@ -27,8 +28,14 @@ void content(shark::uminiint cx, char* path = ".") {
 	shark::BOOL cExtendet = cx & cxExtendet, cJson = cx & cxJson;
 	shark::int64 freediskspace = disks::freeDiskSpace(path);
 	shark::BOOL isFolder = disks::isPathFolder(path) & dfile, exists = disks::fileExists(path);
+	shark::int64 freeRam, ram;
+	shark::BOOL RamOK{ 0 };
+	tie(freeRam, ram, RamOK) = mem::getMemPhys();
 	if (cJson) {
 		cout << "{" << "\"currentFreeSpace\": " << freediskspace;
+		if(RamOK!=0){
+			cout << ", \"freePhysMem\": " << freeRam << ", \"totalPhysRam\": " << ram;
+		}
 		if (cExtendet) {
 			cout << ", \"targetOS\": \"" << ostype << "\", \"pathexists\": " << booltostring(exists) << 
 				", \"isPathFile\": " << booltostring(isFolder);
@@ -41,6 +48,10 @@ void content(shark::uminiint cx, char* path = ".") {
 			cout << "Compiled for OS: " << ostype << "\n" << "Selected Path: " << path << "\n" <<
 				"Selected Path Exists: " << booltostring(exists) << "\n" <<
 				"Is Path File: " << booltostring(isFolder) << "\n";
+		}
+		if (RamOK!=0) {
+			cout << "Free Physical Memory: " << freeRam <<
+				"\nTotal Physical Memory: " << ram << "\n";
 		}
 		cout << flush;
 	}

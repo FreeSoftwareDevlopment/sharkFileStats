@@ -1,7 +1,7 @@
 #pragma once
 #include "../global.h"
 
-#pragma comment(lib, "user32.lib")
+#include <tuple>
 
 #ifdef linux
 #include <sys/statvfs.h>
@@ -12,7 +12,9 @@
 #ifdef  windows
 #include <Windows.h>
 #include <Shlwapi.h>
+#include <sysinfoapi.h>
 #pragma comment(lib, "Shlwapi.lib")
+#pragma comment(lib, "User32.lib")
 #else
 #error Diskstats: OS not Supported!
 #endif
@@ -27,4 +29,8 @@ namespace disks {
 	shark::int64 freeDiskSpace(char* drivename);
 	shark::BOOL fileExists(char* filename);
 	shark::uminiint isPathFolder(char* filename);
+}
+
+namespace mem {
+	std::tuple<shark::int64, shark::int64, shark::BOOL> getMemPhys();
 }

@@ -53,3 +53,27 @@ shark::uminiint disks::isPathFolder(char* filename) {
 #endif
 	return ret;
 }
+
+//MEMSTATS
+std::tuple<shark::int64, shark::int64, shark::BOOL> mem::getMemPhys() {
+	//0 fremmem; 1 mem; 2 ok
+	std::tuple<shark::int64, shark::int64, shark::BOOL> t;
+#if !defined(linux)&&defined(windows)
+	MEMORYSTATUSEX memstat;
+	memstat.dwLength = sizeof(memstat);
+	shark::BOOL state = GlobalMemoryStatusEx((LPMEMORYSTATUSEX)&memstat);
+	if (state) {
+		std::get<1>(t) = memstat.ullTotalPhys;
+		std::get<0>(t) = memstat.ullAvailPhys;
+	}
+	std::get<2>(t) = state;
+#else
+	shark::int64 pages = sysconf(_SC_PHYS_PAGES);
+	shark::int64 page_size = sysconf(_SC_PAGE_SIZE);
+	shark::int64 pagesFree = sysconf(_SC_AVPHYS_PAGES);
+	std::get<1>(t) = pages * page_size;
+	std::get<0>(t) = pagesFree * page_size;
+	std::get<2>(t) = 1;
+#endif
+	return t;
+}
