@@ -26,7 +26,7 @@ shark::uminiint disks::isPathFolder(char* filename) {
 	shark::uminiint ret = dnothing;
 #if !defined(linux)&&defined(windows)
 	DWORD x = GetFileAttributesA(filename);
-	if (x && FILE_ATTRIBUTE_DIRECTORY) {
+	if (x & FILE_ATTRIBUTE_DIRECTORY) {
 		ret |= dfolder;
 	}
 	else {
